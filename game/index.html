@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prism Breakout — Neon Brickstorm</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23160a38'/%3E%3Crect x='2' y='3' width='12' height='4' fill='%23ff3d7f'/%3E%3Crect x='2' y='9' width='12' height='4' fill='%233dc9ff'/%3E%3C/svg%3E">
+<style>
+  html, body { margin: 0; padding: 0; background: #05020f; height: 100%; }
+  body { display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+  canvas {
+    width: min(100vw, 1280px);
+    height: auto;
+    aspect-ratio: 1280 / 720;
+    display: block;
+    background: #070418;
+    box-shadow: 0 0 60px rgba(61, 201, 255, 0.25);
+  }
+</style>
+</head>
+<body>
+<canvas id="game" width="1280" height="720"></canvas>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
