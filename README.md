@@ -50,3 +50,13 @@ TypeScript helper directly; the game itself is plain HTML + ES modules.
 Deterministic by construction: one seeded generator drives level drops and
 particle motion, and every screenshot scene is staged from literal
 coordinates, so the dossier rebuilds byte-for-byte.
+
+## Screenshots
+
+- `1-title.jpg` — the full rainbow wall behind the logo, brick legend and
+  controls panel
+- `2-play.jpg` — early wall damage, a falling LASER capsule, combo meter live
+- `3-feature.jpg` — the brickstorm moment: three balls in flight, laser
+  cannons firing, a chain explosion mid-burst, WIDE paddle and three more
+  capsules falling at once
+- `4-end.jpg` — game over after a three-level run, with the full run report
