@@ -37,12 +37,19 @@ export function stageScene(world, scene) {
     world.balls[0].x = 640;
     world.balls[0].y = 640;
     world.score = 0;
-    // A drifting capsule and a few sparks keep the title frame alive behind
-    // the veil without hiding the full rainbow wall.
+    // Attract-mode dressing: drifting capsules, a second ball crossing the
+    // lower arena with its trail, and sparks keep the title frame alive
+    // behind the veil without hiding the full rainbow wall.
     world.powers.push({ x: 1086, y: 300, vy: 168, kind: 'M', spin: 1.4 });
+    world.powers.push({ x: 196, y: 470, vy: 168, kind: 'L', spin: 2.9 });
+    const tb = world.newBall(false, 902, 560, 2.6);
+    setBall(tb, 902, 560, -340, -260, [[920, 574], [938, 588], [956, 602], [974, 616]]);
+    world.balls.push(tb);
     addParticles(world, [
       [240, 210, '#ffc93d', 5], [262, 224, '#ff7a3d', 4],
       [1030, 470, '#3dc9ff', 4], [1052, 484, '#e05cff', 5],
+      [420, 560, '#7dff3d', 4], [444, 574, '#3dffc9', 5],
+      [860, 300, '#ff3d7f', 4], [884, 314, '#ffc93d', 4],
     ]);
     return 'title';
   }
@@ -54,12 +61,18 @@ export function stageScene(world, scene) {
     world.bestCombo = 7;
     world.paddle.x = 470;
     setBall(world.balls[0], 742, 392, 300, -430, [[724, 410], [706, 428], [688, 446], [670, 464], [652, 482]]);
+    const pb = world.newBall(false, 330, 560, 0.7);
+    setBall(pb, 330, 560, 380, -300, [[312, 576], [294, 592], [276, 608]]);
+    world.balls.push(pb);
     world.powers.push({ x: 872, y: 330, vy: 168, kind: 'L', spin: 1.2 });
     world.powers.push({ x: 300, y: 470, vy: 168, kind: 'M', spin: 2.6 });
+    world.powers.push({ x: 1010, y: 540, vy: 168, kind: 'W', spin: 4.4 });
     addParticles(world, [
       [560, 240, '#ffc93d', 5], [584, 252, '#ffc93d', 4], [538, 262, '#ff7a3d', 5],
       [906, 200, '#3dc9ff', 4], [926, 214, '#3dc9ff', 5], [886, 218, '#7a5cff', 4],
       [352, 330, '#7dff3d', 4], [372, 344, '#7dff3d', 5],
+      [620, 520, '#e05cff', 4], [644, 534, '#3dc9ff', 5], [596, 536, '#e05cff', 4],
+      [180, 620, '#ffc93d', 4], [204, 632, '#ff7a3d', 4],
     ]);
     world.texts.push({ x: 610, y: 226, str: '+100', color: '#ffc93d', life: 0.8 });
     world.texts.push({ x: 905, y: 180, str: '+50', color: '#3dc9ff', life: 0.7 });
@@ -84,6 +97,10 @@ export function stageScene(world, scene) {
     const b3 = world.newBall(false, 660, 470, 2.4);
     setBall(b3, 660, 470, -180, 500, [[668, 448], [676, 426], [684, 404]]);
     world.balls.push(b3);
+    const b4 = world.newBall(false, 240, 600, 0.5);
+    setBall(b4, 240, 600, 420, -240, [[222, 612], [204, 624], [186, 636]]);
+    world.balls.push(b4);
+    world.powers.push({ x: 900, y: 590, vy: 168, kind: 'M', spin: 5.3 });
     world.lasers.push({ x: 546, y: 420, vy: -760 }, { x: 546, y: 300, vy: -760 }, { x: 734, y: 470, vy: -760 }, { x: 734, y: 350, vy: -760 }, { x: 546, y: 540, vy: -760 }, { x: 734, y: 590, vy: -760 });
     world.powers.push({ x: 210, y: 250, vy: 168, kind: 'W', spin: 0.7 });
     world.powers.push({ x: 1050, y: 430, vy: 168, kind: '+', spin: 2.1 });
